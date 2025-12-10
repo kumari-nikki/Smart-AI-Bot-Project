@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "../App.css"
 import { RiImageAiLine } from "react-icons/ri";
 import { RiImageAddLine } from "react-icons/ri";
 import { IoChatbubbleOutline } from "react-icons/io5";
 import { FiPlus } from "react-icons/fi";
 import { FaArrowUpLong } from "react-icons/fa6";
+import { dataContext } from '../context/UserContext';
+import Chat from'./Chat.jsx';
 const Home = () => {
+    let {startRes, setStartRes}=useContext(dataContext);
+      async function handleSubmit(e)
+      {
+        e.preventDefault()
+        setStartRes(true)
+      }
     return (
         <div className='home'>
             <nav>
@@ -13,7 +21,7 @@ const Home = () => {
                     Smart AI Bot
                 </div>
             </nav>
-            <div className="hero">
+            {!startRes? <div className="hero">
                 <span id="tag">What can i help with?</span>
                 <div className="cate">
                     <div className="upImg">
@@ -29,8 +37,12 @@ const Home = () => {
                         <span>Let's Chat</span>
                     </div>
                 </div>
-            </div>
-            <form className="input-box">
+            </div> 
+            :
+            <Chat/>
+            }
+       
+            <form className="input-box" onSubmit={(e)=>handleSubmit(e)}>
                 <button id="add">
                     <FiPlus />
                 </button>

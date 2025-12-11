@@ -106,22 +106,22 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor:pointer;
+    cursor: pointer;
 
 }
 
 #add svg {
     width: 30px;
     height: 30px;
-
-
 }
 
 #submit svg {
     width: 25px;
     height: 25px;
+}
 
-
+#genImg {
+    color: rgb(13, 225, 236);
 }
 
 form input {
@@ -170,40 +170,47 @@ form input {
     position: absolute;
     bottom: 90px;
     left: 15%;
-    border-radius:20px;
-    display:flex;
+    border-radius: 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:20px;
-    padding:10px;
+    gap: 20px;
+    padding: 10px;
 }
-.select-upload-image, .select-generate-image{
- color:white;
- width:100%;
- padding:3px;
- display:flex;
+
+.select-upload-image,
+.select-generate-image {
+    color: white;
+    width: 100%;
+    padding: 3px;
+    display: flex;
     justify-content: start;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     font-size: 15px;
-    cursor:pointer;
+    cursor: pointer;
 }
-.select-upload-image:hover, .select-generate-image:hover{
-    background-color:rgba(240, 248, 255, 0.1) ;
-    border-radius:20px;
+
+.select-upload-image:hover,
+.select-generate-image:hover {
+    background-color: rgba(240, 248, 255, 0.1);
+    border-radius: 20px;
 }
-.select-upload-image svg{
-  color: rgb(13, 236, 17);
-  width:25px;
-height:25px;
+
+.select-upload-image svg {
+    color: rgb(13, 236, 17);
+    width: 25px;
+    height: 25px;
 
 }
-.select-generate-image svg{
-  color: rgb(13, 225, 236);
-   width:25px;
-height:25px;
+
+.select-generate-image svg {
+    color: rgb(13, 225, 236);
+    width: 25px;
+    height: 25px;
 }
+
 @media (max-width:500px) {
     #tag {
         font-size: 20px;

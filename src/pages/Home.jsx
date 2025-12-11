@@ -8,10 +8,11 @@ import { FaArrowUpLong } from "react-icons/fa6";
 import { dataContext } from '../context/UserContext';
 import Chat from './Chat.jsx';
 const Home = () => {
-    let { startRes, setStartRes, popUp, setPopUp } = useContext(dataContext);
+    let { startRes, setStartRes, popUp, setPopUp, input, setInput, feature, setFeature, prevInput, setPrevInput } = useContext(dataContext);
     async function handleSubmit(e) {
-        e.preventDefault()
         setStartRes(true)
+        setPrevInput(input)
+        setInput("")
     }
     return (
         <div className='home'>
@@ -27,11 +28,15 @@ const Home = () => {
                         <RiImageAddLine />
                         <span>Upload Image</span>
                     </div>
-                    <div className="genImg">
+                    <div className="genImg" onClick={() => {
+                        setFeature("genImg")
+                    }}>
                         <RiImageAiLine />
                         <span>Generate Image</span>
                     </div>
-                    <div className="chat">
+                    <div className="chat" onClick={() => {
+                        setFeature("chat")
+                    }}>
                         <IoChatbubbleOutline />
                         <span>Let's Chat</span>
                     </div>
@@ -41,26 +46,39 @@ const Home = () => {
                 <Chat />
             }
 
-            <form className="input-box" onSubmit={(e) => handleSubmit(e)}>
-                <div className="pop-up">
+            <form className="input-box" onSubmit={(e) => {
+                e.preventDefault()
+                if (input) {
+                    handleSubmit(e)
+                }
+            }
+            }>
+                {popUp ? <div className="pop-up">
                     <div className="select-upload-image">
                         <RiImageAddLine />
                         <span>Upload Image</span>
                     </div>
-                    <div className="select-generate-image">
+                    <div className="select-generate-image" onClick={() => {
+                        setFeature("genImg")
+                    }}>
                         <RiImageAiLine />
                         <span>Generate Image</span>
                     </div>
-                </div>
+                </div> : null
+                }
                 <div id="add" onClick={() => {
                     setPopUp(prev => !prev)
                 }}>
-                    <FiPlus />
+                    {feature == "genImg" ? <RiImageAiLine id="genImg" /> : <FiPlus />}
+
                 </div>
-                <input type="text" placeholder="Ask Something..." />
-                <button id="submit">
+                <input type="text" placeholder="Ask Something..." onChange={(e) => setInput(
+                    e.target.value
+                )} value={input} />
+                {input ? <button id="submit">
                     <FaArrowUpLong />
-                </button>
+                </button> : null}
+
             </form>
         </div>
     )

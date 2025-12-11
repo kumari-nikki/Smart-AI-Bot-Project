@@ -2,8 +2,12 @@ import React, { createContext, useState } from 'react'
 export const dataContext = createContext()
 const UserContext = ({ children }) => {
     let [startRes, setStartRes] = useState(false)
+    let [popUp, setPopUp]=useState(false)
     let value = {
-        startRes, setStartRes
+        startRes, 
+        setStartRes,
+        popUp, 
+        setPopUp
     }
     return (
 

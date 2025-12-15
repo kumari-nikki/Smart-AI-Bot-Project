@@ -1,5 +1,15 @@
 import React, { createContext, useState } from 'react'
 export const dataContext = createContext()
+export let user={
+    data:null,
+    mime_type:null,
+    prompt:null
+}
+export let prevUser={
+    data:null,
+    mime_type:null,
+}
+
 const UserContext = ({ children }) => {
     let [startRes, setStartRes] = useState(false)
     let [popUp, setPopUp] = useState(false)

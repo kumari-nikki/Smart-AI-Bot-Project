@@ -24,7 +24,9 @@ const Home = () => {
             {!startRes ? <div className="hero">
                 <span id="tag">What can i help with?</span>
                 <div className="cate">
-                    <div className="upImg">
+                    <div className="upImg" onClick={()=>{
+                        document.getElementById("inputImg").click()
+                    }}>
                         <RiImageAddLine />
                         <span>Upload Image</span>
                     </div>
@@ -45,7 +47,7 @@ const Home = () => {
                 :
                 <Chat />
             }
-
+          <input type="file" accept='image/*' hidden id='inputImg'/>
             <form className="input-box" onSubmit={(e) => {
                 e.preventDefault()
                 if (input) {
@@ -54,7 +56,9 @@ const Home = () => {
             }
             }>
                 {popUp ? <div className="pop-up">
-                    <div className="select-upload-image">
+                    <div className="select-upload-image" onClick={()=>{
+                        document.getElementById("inputImg").click()
+                    }}>
                         <RiImageAddLine />
                         <span>Upload Image</span>
                     </div>

@@ -34,6 +34,10 @@ nav {
     font-size: 2vmax;
 }
 
+.select-upload-image:hover {
+    cursor: pointer;
+}
+
 .cate {
     display: flex;
     align-items: center;
@@ -148,7 +152,7 @@ form input {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-
+    overflow-y: auto;
 }
 
 .user,
@@ -160,6 +164,24 @@ form input {
     background-color: rgb(11, 16, 17);
     border-radius: 20px;
     font-size: 20px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.user img {
+    max-width: 300px;
+    width: 90%;
+    border-radius: 20px;
+}
+
+.ai img {
+    max-width: 300px;
+    width: 90%;
+    border-radius: 20px;
 }
 
 .pop-up {
@@ -209,6 +231,15 @@ form input {
     color: rgb(13, 225, 236);
     width: 25px;
     height: 25px;
+}
+
+.small-preview img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 55px;
+    box-shadow: 0 0 10px 3px rgb(97, 223, 97);
+    margin-left:10px;
 }
 
 @media (max-width:500px) {

@@ -242,8 +242,98 @@ form input {
     margin-left:10px;
 }
 
+
 @media (max-width:500px) {
     #tag {
         font-size: 20px;
     }
+}
+.nav{
+    background-color: rgb(41, 35, 35);
+    color: rgb(204, 244, 244);
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    padding: 1.4em;
+    gap:15px;
+    cursor: pointer;
+}
+.signup-container {
+  display: flex;
+  height: 87vh;
+}
+
+
+.signup-container {
+  display: flex;
+  height: 100vh; 
+}
+.heading{
+    text-align: center; 
+    margin-right:7.5%; 
+    color: #fff;
+    
+    
+}
+
+form {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 15px; 
+ 
+}
+.account {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  width: 100%; 
+ 
+}
+
+.account input {
+  border: 2px solid #0c100c; 
+  padding: 8px 12px;
+  border-radius: 25px; 
+  color: #090909; 
+  background-color: #fff; 
+  width: 100%; 
+  margin-left: 15%;
+  cursor:pointer;
+  
+}
+.forlogin{
+    margin-right: 9.3%;
+    color: #fff;
+}
+.forlogin Link{
+    margin-right: 9.3%;
+    color: #eb9307;
+}
+.signup-container button{
+margin-right: 10%;
+width:20%;
+cursor:pointer;
+border-radius: 8px;
+background-color: rgb(201, 237, 146);
+}
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-section img {
+ width:65%;
+ height:72vh;
+ margin-bottom: 15%;
+}
+.wholeBox{
+    background-color:#1A1A1A;
+}
+.login-form{
+    margin:auto;
 }
